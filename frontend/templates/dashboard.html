@@ -1,0 +1,161 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Snabbit Demand Predictor</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <header class="header">
+            <div>
+                <p class="brand">SNABBIT AI</p>
+                <h1>Demand Predictor</h1>
+                <p class="subtitle">
+                    Predict demand using machine learning.
+                </p>
+            </div>
+
+            <span class="status">● Model Ready</span>
+        </header>
+
+
+        <main class="dashboard">
+
+            <section class="card">
+
+                <h2>Demand Prediction</h2>
+
+                <p class="description">
+                    Enter the time details to estimate demand.
+                </p>
+
+                <form id="predictionForm">
+
+                    <div class="form-grid">
+
+                        <div class="form-group">
+                            <label for="hour">Hour (0–23)</label>
+                            <input
+                                type="number"
+                                id="hour"
+                                min="0"
+                                max="23"
+                                value="14"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="day_of_week">
+                                Day of Week (0–6)
+                            </label>
+                            <input
+                                type="number"
+                                id="day_of_week"
+                                min="0"
+                                max="6"
+                                value="2"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="day_of_month">
+                                Day of Month (1–31)
+                            </label>
+                            <input
+                                type="number"
+                                id="day_of_month"
+                                min="1"
+                                max="31"
+                                value="20"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="month">Month (1–12)</label>
+                            <input
+                                type="number"
+                                id="month"
+                                min="1"
+                                max="12"
+                                value="9"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="week_of_year">
+                                Week of Year (1–53)
+                            </label>
+                            <input
+                                type="number"
+                                id="week_of_year"
+                                min="1"
+                                max="53"
+                                value="38"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="is_weekend">
+                                Is Weekend?
+                            </label>
+                            <select id="is_weekend" required>
+                                <option value="0">No</option>
+                                <option value="1">Yes</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+                    <button type="submit" id="predictBtn">
+                        Predict Demand
+                    </button>
+
+                </form>
+
+                <p id="errorMessage" class="error"></p>
+
+            </section>
+
+
+            <section class="card result-card">
+
+                <p class="result-label">PREDICTED DEMAND</p>
+
+                <h2 id="predictionResult">--</h2>
+
+                <p class="result-unit">
+                    Estimated demand units
+                </p>
+
+                <div class="result-footer">
+                    <span>Gradient Boosting Model</span>
+                    <span id="resultStatus">Ready</span>
+                </div>
+
+            </section>
+
+        </main>
+
+
+        <footer>
+            <p>Snabbit Demand Predictor • Machine Learning Project</p>
+        </footer>
+
+    </div>
+
+    <script src="/static/dashboard.js"></script>
+
+</body>
+</html>
