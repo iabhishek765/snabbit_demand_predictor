@@ -7,6 +7,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const resultStatus = document.getElementById("resultStatus");
     const errorMessage = document.getElementById("errorMessage");
 
+    const recommendedStaff = document.getElementById("recommendedStaff");
+    const demandLevel = document.getElementById("demandLevel");
+
     form.addEventListener("submit", async (event) => {
         event.preventDefault();
 
@@ -43,11 +46,23 @@ document.addEventListener("DOMContentLoaded", () => {
                 );
             }
 
-            // Display prediction
-            predictionResult.textContent =
-                Math.round(result.predicted_demand);
+           
+            
+// Display prediction
+predictionResult.textContent =
+    Math.round(result.predicted_demand);
 
-            resultStatus.textContent = "Success";
+// Display staffing recommendation
+const staffing = result.staffing_recommendation;
+
+recommendedStaff.textContent =
+    staffing.recommended_staff;
+
+// Display demand level
+demandLevel.textContent =
+    staffing.demand_level;
+
+resultStatus.textContent = "Success";
         } catch (error) {
             console.error("Prediction error:", error);
 

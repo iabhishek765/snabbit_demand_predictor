@@ -1,4 +1,4 @@
-
+from model.staffing_logic import recommend_staff
 from fastapi import APIRouter
 from pydantic import BaseModel
 
@@ -34,6 +34,9 @@ def predict(request: DemandRequest):
         is_weekend=request.is_weekend
     )
 
+    staffing = recommend_staff(prediction)
+
     return {
-        "predicted_demand": prediction
+        "predicted_demand": prediction,
+        "staffing_recommendation": staffing
     }
