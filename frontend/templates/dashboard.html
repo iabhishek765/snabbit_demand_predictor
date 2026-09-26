@@ -157,7 +157,49 @@
     </div>
 </section>
 
+<section class="card forecast-card">
 
+    <div class="forecast-header">
+        <div>
+            <h2>24-Hour Demand Forecast</h2>
+            <p class="description">
+                Hourly demand and staffing forecast for the selected day.
+            </p>
+        </div>
+
+        <span id="forecastStatus" class="status">
+            Ready
+        </span>
+    </div>
+
+    <div class="forecast-chart-container">
+        <canvas id="forecastChart"></canvas>
+    </div>
+
+    <div class="forecast-table-container">
+
+        <h3>Hourly Staffing Plan</h3>
+
+        <table class="forecast-table">
+
+            <thead>
+                <tr>
+                    <th>Hour</th>
+                    <th>Predicted Demand</th>
+                    <th>Recommended Staff</th>
+                    <th>Demand Level</th>
+                </tr>
+            </thead>
+
+            <tbody id="forecastTableBody">
+                <!-- Forecast rows will be inserted here -->
+            </tbody>
+
+        </table>
+
+    </div>
+
+</section>
             
 
         </main>
@@ -169,7 +211,8 @@
 
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="/static/dashboard.js"></script>
-
+    
 </body>
 </html>

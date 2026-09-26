@@ -40,3 +40,30 @@ def predict(request: DemandRequest):
         "predicted_demand": prediction,
         "staffing_recommendation": staffing
     }
+
+@router.post("/forecast")
+def forecast(request: DemandRequest):
+    forecast_data = []
+
+    for hour in range(24):
+        prediction = predict_demand(
+            hour=hour,
+            day_of_week=request.day_of_week,
+            day_of_month=request.day_of_month,
+            month=request.month,
+            week_of_year=request.week_of_year,
+            is_weekend=request.is_weekend,
+        )
+
+        staffing = recommend_staff(prediction)
+
+        forecast_data.append({
+            "hour": hour,
+            "predicted_demand": prediction,
+            "recommended_staff": staffing["recommended_staff"],
+            "demand_level": staffing["demand_level"],
+        })
+
+    return {
+        "forecast": forecast_data
+    }

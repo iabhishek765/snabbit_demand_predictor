@@ -251,3 +251,98 @@ footer {
 }
 
 }
+/* ============================= */
+/* 24-Hour Forecast Section */
+/* ============================= */
+
+.forecast-card {
+    margin-top: 24px;
+}
+
+.forecast-header {
+    margin-bottom: 20px;
+}
+
+.forecast-header h2 {
+    margin-bottom: 6px;
+}
+
+.forecast-header .description {
+    margin: 0;
+}
+
+.forecast-chart-container {
+    width: 100%;
+    height: 320px;
+    margin-bottom: 28px;
+}
+
+.forecast-chart-container canvas {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.forecast-table-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.forecast-table-container h3 {
+    margin-bottom: 14px;
+}
+
+.forecast-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.forecast-table th,
+.forecast-table td {
+    padding: 12px 14px;
+    text-align: left;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.forecast-table th {
+    font-weight: 600;
+    background: #f8fafc;
+    color: #334155;
+}
+
+.forecast-table td {
+    color: #475569;
+}
+
+.forecast-table tbody tr:hover {
+    background: #f8fafc;
+}
+
+
+/* ============================= */
+/* Demand Level Badges */
+/* ============================= */
+
+.demand-badge {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1;
+}
+
+.demand-badge.low {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.demand-badge.medium {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.demand-badge.high {
+    background: #fee2e2;
+    color: #991b1b;
+}
