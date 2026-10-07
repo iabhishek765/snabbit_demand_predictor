@@ -474,8 +474,8 @@ The project includes a browser-based dashboard that allows users to enter time-b
 
 The following screenshot demonstrates the working dashboard interface.
 
-![Snabbit Demand Predictor Dashboard](assets/dashboardtop.png)
-![Snabbit Demand Predictor Dashboard](assets/dashboardbottom.png)
+![Snabbit Demand Predictor Dashboard](assets/dashboard_top.png)
+![Snabbit Demand Predictor Dashboard](assets/dashboard_bottom.png)
 
 **Dashboard Preview:**
 
@@ -548,7 +548,10 @@ Used for exploratory data analysis, model development, and evaluation.
 
 ### Assets
 
-**`assets/Dashboardtop.png`**
+**`assets/dashboard_top.png`**
+**`assets/dashboard_bottom.png`**
+**`assets/api_forcast.png`**
+
 
 Screenshot of the working demand prediction dashboard.
 
