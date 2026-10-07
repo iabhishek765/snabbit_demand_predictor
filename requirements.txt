@@ -1,8 +1,9 @@
-numpy
+fastapi
+uvicorn
 pandas
+numpy
+scikit-learn
+joblib
 matplotlib
-prophet
-flask
 jupyter
 ipykernel
-joblib

@@ -80,6 +80,21 @@ Gradient Boosting is an ensemble learning technique that builds a prediction mod
 
 The trained model uses time-based features to learn demand patterns from the generated dataset.
 
+### Models Evaluated
+
+The following models were evaluated:
+
+1. Average Bookings by Hour — baseline
+2. Linear Regression
+3. Random Forest Regressor
+4. Gradient Boosting Regressor
+
+The models were evaluated on a held-out test set using:
+
+- MAE
+- RMSE
+- R²
+
 ### Input Features
 
 The model receives the following time-based features:
@@ -119,7 +134,10 @@ snabbit_demand_predictor/
 
 │
 ├── assets/
-│   └── dashboard.png
+│   └── dashboard_top.png
+    └── dashboard_bottom.png
+    └── api_forecast.png
+
 │
 ├── backend/
 │   ├── app.py
@@ -348,11 +366,24 @@ The validation rules ensure that time-based inputs remain within their expected 
 
 ---
 
-## 📊 Model Evaluation
+### 📊 Final Model Evaluation
 
 The Gradient Boosting model was evaluated using actual predictions and corresponding test data in the model evaluation notebook.
 
 The evaluation metrics measure the difference between actual demand and predicted demand.
+
+
+| Model | MAE | RMSE | R² |
+|---|---:|---:|---:|
+| Average Bookings by Hour | 8.86 | 11.48 | — |
+| Linear Regression | 9.87 | 12.74 | — |
+| Random Forest | 7.11 | 9.08 | 0.7069 |
+| Gradient Boosting | 6.99 | 8.91 | 0.7174 |
+
+The final Gradient Boosting model is saved as:
+
+`model/gradient_boosting_model.pkl`
+
 
 ### Evaluation Metrics
 
@@ -443,13 +474,19 @@ The project includes a browser-based dashboard that allows users to enter time-b
 
 The following screenshot demonstrates the working dashboard interface.
 
-![Snabbit Demand Predictor Dashboard](assets/dashboard.png)
+![Snabbit Demand Predictor Dashboard](assets/dashboardtop.png)
+![Snabbit Demand Predictor Dashboard](assets/dashboardbottom.png)
 
 **Dashboard Preview:**
 
 The dashboard provides an interface for entering the hour, day of the week, day of the month, month, week of the year, and weekend status.
 
 The prediction result is displayed after submitting the input values.
+
+
+### API Forecast
+
+![FastAPI Forecast Response](assets/api_forecast.png)
 
 ### Dashboard Workflow
 
@@ -511,7 +548,7 @@ Used for exploratory data analysis, model development, and evaluation.
 
 ### Assets
 
-**`assets/dashboard.png`**
+**`assets/Dashboardtop.png`**
 
 Screenshot of the working demand prediction dashboard.
 

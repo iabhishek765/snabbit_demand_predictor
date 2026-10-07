@@ -27,12 +27,12 @@ def recommend_staff(
         predicted_demand / bookings_per_staff
     )
 
-    if predicted_demand == 0:
+    if predicted_demand <= 30:
         demand_level = "Low"
-    elif predicted_demand <= 20:
+    elif predicted_demand <= 70:
         demand_level = "Medium"
     else:
-        demand_level = "High"
+         demand_level = "High"
 
     return {
         "predicted_demand": round(predicted_demand, 2),
